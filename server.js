@@ -85,9 +85,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // set cloudinary
 cloudinary.config({
-    cloud_name: "",
-    api_key: "",
-    api_secret: "",
+    cloud_name: "di9ensrul",
+    api_key: "816515555729951",
+    api_secret: "s2Cy-EKqLqqQeGzcjw0yC3jex80",
     secure: true,
 });
 
