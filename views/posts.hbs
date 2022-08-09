@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-12 table-responsive ">
+        <h2>Posts <a href="/posts/add" class="btn btn-success pull-right">Add Post</a></h2>
+        <hr />
+
+
+        {{!-- <p>TODO: render a list of all post title values here</p> --}}
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Post ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Post Date</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Published</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each posts}}
+                <tr>
+                    <td>{{this.id}}</td>
+                    <td>{{this.title}}</td>
+                    <td>{{#formatDate this.postDate}}{{/formatDate}}</td>
+                    <td><a href="/posts?category={{this.category}}">{{this.category}}</a></td>
+                    <td>{{this.published}}</td>
+                    <td><a href="/posts/delete/{{this.id}}" class="btn btn-danger">remove</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+{{#unless posts}}
+<div class="col-md-12 text-center">
+    <strong>{{message}}</strong>
+</div>
+
+{{/unless}}
+</div>
